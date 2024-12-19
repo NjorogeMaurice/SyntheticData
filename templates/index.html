@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Synthetic Data in Healthcare</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+    <header class="bg-blue-600 text-white py-6">
+        <div class="container h-screen flex flex-col justify-center mx-auto px-4">
+            <h1 class="text-5xl font-bold">Synthetic Data in Healthcare</h1>
+            <p class="mt-2 text-lg">Generate synthetic data that depict real-world data</p>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-10">
+        <!-- Introduction Section -->
+        <section class="mb-10">
+            <h2 class="text-2xl font-semibold mb-4">What is Synthetic Data?</h2>
+            <p class="text-lg leading-relaxed">
+                Synthetic data refers to artificially generated data that mimics real-world data. Using advanced algorithms, it captures the structure, distribution, and patterns of real datasets while ensuring complete privacy and anonymization.
+            </p>
+        </section>
+
+        <!-- Benefits of Synthetic Data -->
+        <section class="mb-10 bg-white shadow-md p-6 rounded-lg">
+            <h2 class="text-2xl font-semibold mb-4 text-blue-600">Why Use Synthetic Data?</h2>
+            <ul class="list-disc ml-6 space-y-2">
+                <li>
+                    <strong>Privacy Protection:</strong> Synthetic data eliminates the risk of exposing sensitive patient information.
+                </li>
+                <li>
+                    <strong>Data Accessibility:</strong> It enables sharing of high-quality data with researchers and developers, bypassing regulatory constraints.
+                </li>
+                <li>
+                    <strong>Cost Efficiency:</strong> Reduces the need for expensive data collection processes.
+                </li>
+                <li>
+                    <strong>Enhanced AI Training:</strong> Synthetic data can help train machine learning models, especially in areas where real-world data is sparse.
+                </li>
+            </ul>
+        </section>
+
+        <!-- Healthcare Applications -->
+        <section class="mb-10">
+            <h2 class="text-2xl font-semibold mb-4">Applications in Healthcare</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Application 1 -->
+                <div class="bg-blue-50 p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-bold mb-2">Improved Diagnostics</h3>
+                    <p>
+                        Synthetic data helps train diagnostic tools by providing diverse datasets, reducing biases and improving accuracy in disease detection.
+                    </p>
+                </div>
+                <!-- Application 2 -->
+                <div class="bg-blue-50 p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-bold mb-2">Personalized Medicine</h3>
+                    <p>
+                        By simulating various patient scenarios, synthetic data enables the development of personalized treatment plans tailored to unique patient needs.
+                    </p>
+                </div>
+                <!-- Application 3 -->
+                <div class="bg-blue-50 p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-bold mb-2">Clinical Trials</h3>
+                    <p>
+                        Synthetic data accelerates clinical trial simulations, identifying potential risks and outcomes before real-world testing.
+                    </p>
+                </div>
+                <!-- Application 4 -->
+                <div class="bg-blue-50 p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-bold mb-2">Healthcare Operations</h3>
+                    <p>
+                        Optimize hospital workflows and resource allocation by simulating patient flow scenarios with synthetic datasets.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Conclusion Section -->
+        <section class="text-center py-8 bg-gray-50 rounded-lg shadow-md">
+            <h2 class="text-2xl font-semibold mb-4">The Future of Synthetic Data</h2>
+            <p class="text-lg leading-relaxed mb-6">
+                Synthetic data is transforming healthcare by enabling innovation while safeguarding patient privacy. Its applications are boundless, and its potential is only beginning to unfold.
+            </p>
+            <a href="#" class="bg-blue-600 text-white px-6 py-3 rounded-lg text-lg hover:bg-blue-700 transition">
+                Learn More
+            </a>
+        </section>
+
+         <!-- Data Upload Section -->
+       <!-- Data Upload Section -->
+        <section class="mb-10 bg-white mt-5 shadow-md p-6 rounded-lg">
+            <h2 class="text-2xl font-semibold mb-4 text-blue-600">Upload Data</h2>
+            <p class="text-lg leading-relaxed mb-6">
+                Share your tabular datasets securely to explore synthetic data generation. Ensure your files are in CSV or XLSX format and adhere to data privacy standards.
+            </p>
+
+            <div class="flex flex-col items-center mb-4">
+                <label for="file-upload" class="w-full md:w-1/2 bg-gray-100 border-2 border-dashed border-gray-300 rounded-lg p-6 text-center cursor-pointer hover:bg-gray-200 transition">
+                    <span class="text-gray-600">Drag and drop your file here or click to browse</span>
+                    <input id="file-upload" type="file" class="hidden" accept=".csv,.xlsx">
+                </label>
+                <button id="upload-button" class="mt-4 bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition">
+                    Upload File from Local Computer
+                </button>
+            </div>
+
+            <div class="flex flex-col items-center">
+                <label for="data-url" class="w-full md:w-1/2 text-center">
+                    <input id="data-url" type="text" placeholder="Enter data URL" class="w-full p-4 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"/>
+                </label>
+                <button id="upload-url-button" class="mt-4 bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition">
+                    Upload from URL
+                </button>
+            </div>
+
+            <div id="loading" class="hidden mt-4">
+                <p class="text-blue-600 text-center">Processing your data... Please wait.</p>
+            </div>
+            <div id="message" class="mt-4 text-center"></div>
+
+            <div id="result" class="mt-6"></div>
+
+        </section>
+    </main>
+
+    <footer class="bg-blue-600 text-white py-4">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2024 Synthetic Health Insights. All rights reserved.</p>
+        </div>
+    </footer>
+
+ <script>
+       const uploadButton = document.getElementById('upload-button');
+const fileInput = document.getElementById('file-upload');
+const uploadUrlButton = document.getElementById('upload-url-button');
+const dataUrlInput = document.getElementById('data-url');
+const loadingIndicator = document.getElementById('loading');
+const messageContainer = document.getElementById('message');
+
+function showLoading(show) {
+    loadingIndicator.classList.toggle('hidden', !show);
+}
+
+function showMessage(message, isError = false) {
+    messageContainer.textContent = message;
+    messageContainer.className = isError ? 'text-red-600' : 'text-green-600';
+}
+
+function downloadFile(blob, filename) {
+    const link = document.createElement('a');
+    link.href = window.URL.createObjectURL(blob);
+    link.download = filename;
+    link.click();
+    window.URL.revokeObjectURL(link.href);
+}
+
+uploadButton.addEventListener('click', () => {
+    const file = fileInput.files[0];
+    if (!file) {
+        showMessage('Please select a file to upload.', true);
+        return;
+    }
+
+    const formData = new FormData();
+    formData.append('file', file);
+
+    showLoading(true);
+    fetch('/upload', {
+        method: 'POST',
+        body: formData,
+    })
+        .then(response => {
+            showLoading(false);
+            if (!response.ok) {
+                return response.json().then(err => {
+                    showMessage(err.error, true);
+                    throw new Error(err.error);
+                });
+            }
+            return response.blob();
+        })
+        .then(blob => {
+            downloadFile(blob, 'synthetic_data.csv');
+            showMessage('File processed successfully!');
+        })
+        .catch(error => {
+            showLoading(false);
+            showMessage('An error occurred while uploading the file.', true);
+        });
+});
+
+uploadUrlButton.addEventListener('click', () => {
+    const url = dataUrlInput.value.trim();
+    if (!url) {
+        showMessage('Please enter a data URL.', true);
+        return;
+    }
+
+    showLoading(true);
+    fetch('/upload-url', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ url }),
+    })
+        .then(response => {
+            showLoading(false);
+            if (!response.ok) {
+                return response.json().then(err => {
+                    showMessage(err.error, true);
+                    throw new Error(err.error);
+                });
+            }
+            return response.blob();
+        })
+        .then(blob => {
+            downloadFile(blob, 'synthetic_data.csv');
+            showMessage('File processed successfully!');
+        })
+        .catch(error => {
+            showLoading(false);
+            showMessage('An error occurred while uploading from the URL.', true);
+        });
+});
+
+    </script>
+</body>
+</html>
